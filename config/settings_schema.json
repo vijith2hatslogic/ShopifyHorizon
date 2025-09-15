@@ -1,7 +1,7 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Horizon",
+    "theme_name": "Sail Away",
     "theme_version": "2.1.6",
     "theme_author": "Shopify",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
@@ -64,7 +64,7 @@
             "type": "color",
             "id": "primary",
             "label": "t:settings.primary_color",
-            "default": "#000F9F",
+            "default": "#1e3a8a",
             "alpha": true
           },
           {
@@ -96,7 +96,7 @@
             "type": "color",
             "id": "primary_button_background",
             "label": "t:settings.background",
-            "default": "#000F9F",
+            "default": "#1e3a8a",
             "alpha": true
           },
           {
@@ -110,14 +110,14 @@
             "type": "color",
             "id": "primary_button_border",
             "label": "t:settings.borders",
-            "default": "#000F9F",
+            "default": "#1e3a8a",
             "alpha": true
           },
           {
             "type": "color",
             "id": "primary_button_hover_background",
             "label": "t:settings.hover_background",
-            "default": "#000F9F",
+            "default": "#1e40af",
             "alpha": true
           },
           {
@@ -131,7 +131,7 @@
             "type": "color",
             "id": "primary_button_hover_border",
             "label": "t:settings.hover_borders",
-            "default": "#000F9F",
+            "default": "#1e40af",
             "alpha": true
           },
           {
