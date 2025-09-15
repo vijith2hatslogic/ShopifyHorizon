@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Sailing Store - Plugin Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e0f2fe 100%);
+            min-height: 100vh;
+            color: #374151;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3a8a, #1e40af);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .demo-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
+            border: 2px solid #e0e7ff;
+        }
+
+        .demo-section h2 {
+            color: #1e3a8a;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .demo-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #f0f4ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #1e3a8a;
+        }
+
+        .feature-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-card li {
+            padding: 0.25rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-card li:before {
+            content: "⚓";
+            position: absolute;
+            left: 0;
+            color: #1e3a8a;
+        }
+
+        .demo-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .demo-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #1e3a8a;
+            border-radius: 8px;
+            background: white;
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .demo-btn:hover {
+            background: #1e3a8a;
+            color: white;
+        }
+
+        .demo-btn.primary {
+            background: #1e3a8a;
+            color: white;
+        }
+
+        .demo-btn.primary:hover {
+            background: #1e40af;
+        }
+
+        .keyboard-shortcuts {
+            background: #f0fdf4;
+            border: 2px solid #166534;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .keyboard-shortcuts h4 {
+            color: #166534;
+            margin-bottom: 1rem;
+        }
+
+        .shortcut-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .shortcut-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+
+        .shortcut-key {
+            background: #166534;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer p {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .demo-section {
+                padding: 1.5rem;
+            }
+            
+            .demo-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>⚓ AI-Powered Sailing Store</h1>
+        <p>Intelligent E-commerce Plugins for Sailing Stickers</p>
+    </div>
+
+    <div class="container">
+        <div class="demo-section">
+            <h2>🤖 AI Product Descriptions</h2>
+            <p>Generate compelling, SEO-friendly product descriptions for your sailing stickers using AI. The plugin understands nautical terminology and creates descriptions that appeal to sailing enthusiasts.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Smart Generation</h3>
+                    <ul>
+                        <li>Sailing-themed prompts</li>
+                        <li>Category-specific descriptions</li>
+                        <li>Multiple style options</li>
+                        <li>SEO optimization</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Easy Integration</h3>
+                    <ul>
+                        <li>One-click copy & paste</li>
+                        <li>Direct form integration</li>
+                        <li>Batch processing</li>
+                        <li>Custom templates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="demo-buttons">
+                <button class="demo-btn primary" onclick="openAIDescriptions()">Try AI Descriptions</button>
+                <button class="demo-btn" onclick="showKeyboardShortcuts()">Keyboard Shortcuts</button>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>📸 Smart Image Optimization</h2>
+            <p>Automatically optimize your product images for better performance, faster loading times, and improved user experience. Perfect for showcasing your sailing stickers in the best light.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Performance Boost</h3>
+                    <ul>
+                        <li>Automatic compression</li>
+                        <li>WebP format conversion</li>
+                        <li>Lazy loading</li>
+                        <li>Space savings tracking</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Batch Processing</h3>
+                    <ul>
+                        <li>Optimize all images at once</li>
+                        <li>Real-time progress tracking</li>
+                        <li>Performance analytics</li>
+                        <li>Custom quality settings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="demo-buttons">
+                <button class="demo-btn primary" onclick="openImageOptimizer()">Optimize Images</button>
+                <button class="demo-btn" onclick="showAnalytics()">View Analytics</button>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🧭 Personalized Recommendations</h2>
+            <p>Provide AI-powered product recommendations that learn from customer behavior and preferences. Help your customers discover the perfect sailing stickers for their style and needs.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Smart Learning</h3>
+                    <ul>
+                        <li>User preference tracking</li>
+                        <li>Browsing history analysis</li>
+                        <li>Sailing style recognition</li>
+                        <li>Color preference learning</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Personalized Experience</h3>
+                    <ul>
+                        <li>Match score calculation</li>
+                        <li>Multiple recommendation types</li>
+                        <li>Real-time updates</li>
+                        <li>Conversion optimization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="demo-buttons">
+                <button class="demo-btn primary" onclick="openRecommendations()">View Recommendations</button>
+                <button class="demo-btn" onclick="updatePreferences()">Update Preferences</button>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>⚙️ Integration & Analytics</h2>
+            <p>All plugins work together seamlessly with comprehensive analytics and performance tracking. Monitor your store's performance and optimize the customer experience.</p>
+            
+            <div class="keyboard-shortcuts">
+                <h4>⌨️ Keyboard Shortcuts</h4>
+                <div class="shortcut-list">
+                    <div class="shortcut-item">
+                        <span>Open AI Descriptions</span>
+                        <span class="shortcut-key">Ctrl + Shift + D</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span>Open Image Optimizer</span>
+                        <span class="shortcut-key">Ctrl + Shift + I</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span>Open Recommendations</span>
+                        <span class="shortcut-key">Ctrl + Shift + R</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span>Toggle Dashboard</span>
+                        <span class="shortcut-key">Ctrl + Shift + A</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span>Quick AI Description</span>
+                        <span class="shortcut-key">Ctrl + D</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-buttons">
+                <button class="demo-btn primary" onclick="openDashboard()">Open Dashboard</button>
+                <button class="demo-btn" onclick="viewAnalytics()">View Analytics</button>
+                <button class="demo-btn" onclick="resetDemo()">Reset Demo</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>⚓ Set Sail with AI-Powered E-commerce • Built for Sailing Enthusiasts</p>
+    </div>
+
+    <!-- Load the AI Plugins -->
+    <script src="assets/ai-plugins-config.js"></script>
+    <script src="assets/ai-product-descriptions.js"></script>
+    <script src="assets/smart-image-optimization.js"></script>
+    <script src="assets/personalized-recommendations.js"></script>
+    <script src="assets/ai-plugins-integration.js"></script>
+
+    <script>
+        // Demo functions
+        function openAIDescriptions() {
+            if (window.aiDescriptions) {
+                window.aiDescriptions.togglePanel();
+            } else {
+                alert('AI Descriptions plugin not loaded. Please check the console for errors.');
+            }
+        }
+
+        function openImageOptimizer() {
+            if (window.smartImageOpt) {
+                const panel = document.getElementById('smart-image-optimizer');
+                if (panel) {
+                    panel.style.display = 'block';
+                }
+            } else {
+                alert('Image Optimization plugin not loaded. Please check the console for errors.');
+            }
+        }
+
+        function openRecommendations() {
+            if (window.personalizedRecs) {
+                const panel = document.getElementById('personalized-recommendations');
+                if (panel) {
+                    panel.style.display = 'block';
+                }
+            } else {
+                alert('Recommendations plugin not loaded. Please check the console for errors.');
+            }
+        }
+
+        function openDashboard() {
+            if (window.aiPlugins) {
+                window.aiPlugins.toggleDashboard();
+            } else {
+                alert('AI Plugins integration not loaded. Please check the console for errors.');
+            }
+        }
+
+        function showKeyboardShortcuts() {
+            alert('Keyboard Shortcuts:\n\n' +
+                  'Ctrl + Shift + D: Open AI Descriptions\n' +
+                  'Ctrl + Shift + I: Open Image Optimizer\n' +
+                  'Ctrl + Shift + R: Open Recommendations\n' +
+                  'Ctrl + Shift + A: Toggle Dashboard\n' +
+                  'Ctrl + D: Quick AI Description');
+        }
+
+        function showAnalytics() {
+            if (window.aiPlugins) {
+                const analytics = window.aiPlugins.getAnalytics();
+                alert('Current Analytics:\n\n' +
+                      `Descriptions Generated: ${analytics.descriptions_generated || 0}\n` +
+                      `Images Optimized: ${analytics.images_optimized || 0}\n` +
+                      `Recommendations Shown: ${analytics.recommendations_shown || 0}\n` +
+                      `Conversion Rate: ${analytics.conversion_rate || 0}%`);
+            } else {
+                alert('Analytics not available. Please ensure plugins are loaded.');
+            }
+        }
+
+        function updatePreferences() {
+            if (window.personalizedRecs) {
+                window.personalizedRecs.showPreferences();
+            } else {
+                alert('Recommendations plugin not loaded. Please check the console for errors.');
+            }
+        }
+
+        function viewAnalytics() {
+            showAnalytics();
+        }
+
+        function resetDemo() {
+            if (confirm('This will reset all demo data. Are you sure?')) {
+                localStorage.removeItem('sailing-store-analytics');
+                localStorage.removeItem('sailing-store-preferences');
+                localStorage.removeItem('sailing-store-history');
+                alert('Demo data reset successfully!');
+                location.reload();
+            }
+        }
+
+        // Initialize demo on load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('⚓ AI-Powered Sailing Store Demo Loaded');
+            console.log('🌊 All plugins initialized and ready to use');
+            console.log('📊 Check the floating buttons in the bottom-right corner');
+        });
+    </script>
+</body>
+</html>
